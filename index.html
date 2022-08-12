@@ -1,40 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img src="./examples/assets/main.png" alt="" />
+          <h2>Material UI</h2>
+        </section>
+        <section>
+          <div
+            style="
+              display: flex;
+              column-gap: 10px;
+              align-items: center;
+              justify-content: center;
+              margin: auto;
+            "
+          >
+            <img src="./examples/assets/google.png" alt="" style="width: 150px" />
+            <img src="./examples/assets/arrow.png" alt="" style="width: 150px" />
+            <img src="./examples/assets/mdesign.jpeg" alt="" style="width: 150px" />
+            <img src="./examples/assets/arrow.png" alt="" style="width: 150px" />
+            <img src="./examples/assets/mui-logo.png" alt="" style="width: 200px" />
+          </div>
+          <div
+            style="
+              display: flex;
+              column-gap: 95px;
+              justify-content: center;
+              margin: auto;
+            "
+          >
+            <p>Google</p>
+            <p>Material Design</p>
+            <p>Material UI</p>
+          </div>
+          <img
+            src="./examples/assets/react&mui.jpg"
+            alt=""
+            style="width: 500px; margin-top: 70px"
+          />
+        </section>
+        <section data-transition="convex" data-transition-speed="slow">
+          <section>
+            <h3>Install</h3>
+            <pre><code data-trim data-noescape>
+							npm install @mui/material @emotion/react @emotion/styled
+							
+							yarn add @mui/material @emotion/react @emotion/styled
+						</code></pre>
+            <!-- <img src="./imgs/mui-logo.png" alt="logo" class="logo" style="width: 100px;"> -->
+          </section>
+          <section>
+            <h4>and....use</h4>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import { TextField, Button, List, ListItem } from "@mui/material";
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+							export default function App() {
+								return (
+									<div>
+										<h3>Using Components</h3>
+										<TextField variant="standard" />
+										<Button variant="contained">create</Button>
+										<List>
+											<ListItem>Item#1</ListItem>
+											<ListItem>Item#2</ListItem>
+											<ListItem>Item#3</ListItem>
+										</List>
+									</div>
+								);
+							}
+						</script></code></pre>
+          </section>
+          <section><img src="./examples/assets/components-list.png" alt="" /></section>
+          <section>
+            <h4>icons</h4>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import { TextField, Button, List, ListItem } from "@mui/material";
+							import { EditRounded } from "@mui/icons-material";
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+							function App() {
+								return (
+									<div>
+										<h3>Using Components</h3>
+										<TextField variant="standard" />
+										<Button variant="contained">create</Button>
+										<List>
+											<ListItem>Item#1 <EditRounded /></ListItem>
+											<ListItem>Item#2 <EditRounded /></ListItem>
+											<ListItem>Item#3 <EditRounded /></ListItem>
+										</List>
+									</div>
+								);
+							}
+
+							export default App;
+						</script></code></pre>
+          </section>
+          <section>
+            <h4>typography</h4>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import {TextField, Button, Typography} from "@mui/material";
+							
+							function App() {
+								return (
+									<div>
+											<Typography variant="h3" color="primary">
+												Using Components
+											</Typography>
+											<h3>Using Components</h3>
+											<TextField variant="standard" />
+											<Button variant="contained" color="secondary">
+												create
+											</Button>
+									</div>
+								);
+							}
+							
+							export default App;
+						</script></code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h4>customization</h4>
+            <h6>standard properties & sx</h6>
+            <pre><code data-trim data-noescape><script type="text/template">		
+							function App() {
+								return (
+									<div>
+											<Typography variant="h3" color="primary">
+												Using Components
+											</Typography>
+											<Typography variant="myTypography">
+												<h3>Using Components</h3>
+											</Typography>
+											<TextField variant="standard" sx={{ marginRight: "20px" }} />
+											<Button variant="contained" color="secondary" size="small">
+												create
+											</Button>
+									</div>
+								);
+							}
+							
+							export default App;
+						</script></code></pre>
+          </section>
+          <section>
+            <h4>customization</h4>
+            <h6>extended sx</h6>
+            <pre><code data-trim data-noescape><script type="text/template">		
+							const btn = {
+								backgroundColor: "black",
+								color: "white",
+								"&:hover": { color: "black" },
+							};
+						</script></code></pre>
+
+            <pre><code data-trim data-noescape><script type="text/template">		
+							<Button sx={btn}>BlackBtn</Button>
+						</script></code></pre>
+          </section>
+          <section>
+            <h4>customization</h4>
+            <h6>Theme</h6>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import {createTheme, ThemeProvider, colors,} from "@mui/material";
+							
+							const theme = createTheme({
+								palette: {
+									primary: {
+										main: colors.blue[100],
+									},
+								},
+								typography: {
+									h3: { fontFamily: "Rubik Distressed" },
+									myTypography: { fontFamily: "Rubik Burned" },
+								},
+							});
+							
+							function App() {
+								return (
+									<div>
+										<ThemeProvider theme={theme}>
+											<Typography variant="h3" color="primary">
+												Using Components
+											</Typography>
+											<Typography variant="myTypography">
+												<h3>Using Components</h3>
+											</Typography>
+											<TextField variant="standard" sx={{ marginRight: "20px" }} />
+											<Button variant="contained" color="primary" size="small">
+												create
+											</Button>
+										</ThemeProvider>
+									</div>
+								);
+							}
+							
+							export default App;
+						</script></code></pre>
+          </section>
+          <section>
+            <h4>customization</h4>
+            <h6>create new component</h6>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import NewButton from "./components/NewButton";
+							<NewButton>create</NewButton>
+						</script></code></pre>
+            <pre><code data-trim data-noescape><script type="text/template">
+							import { Button, colors } from "@mui/material";
+							import { styled } from "@mui/material/styles";
+
+							const NewButton = styled(Button)(() => ({
+								borderRadius: "50%",
+								backgroundColor: colors.amber[300],
+								color: colors.orange[900],
+							}));
+
+							export default NewButton;
+						</script></code></pre>
+          </section>
+        </section>
+        <section>
+          <h3>Advantages</h3>
+          <ul>
+            <p>Extensive Library</p>
+            <li>Tons of ready components</li>
+            <li>Wide range of features/animations</li>
+            <li>Full documentation</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>

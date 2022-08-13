@@ -22,6 +22,11 @@
         <section>
           <img src="./examples/assets/main.png" alt="" />
           <h2>Material UI</h2>
+          <aside class="notes">
+            Hello, my name is Aigerim and today I’m going to talk about Material UI. What kind of library it is and how you can use it in your project. 
+            So basically, when you’re creating an application sometimes it is quite useful to use some external libraries that will help you to keep the design of your project consistent and at the same time decrease the amount time spend on development and stylization.
+            So MUI is an option for developers to use with React applications.
+          </aside>
         </section>
         <section>
           <div
@@ -56,6 +61,9 @@
             alt=""
             style="width: 500px; margin-top: 70px"
           />
+          <aside class="notes">
+            It is based on Material design, which is basically a set of rules and guidelines created by Google for their own websites and applications. However, later some developers took those standards and implemented them in Material UI. And created a set of ready to use React components, that is basically an HTML elements or set of elements that have a build-in styles and animations in it.
+          </aside>
         </section>
         <section data-transition="convex" data-transition-speed="slow">
           <section>
@@ -66,6 +74,9 @@
 							yarn add @mui/material @emotion/react @emotion/styled
 						</code></pre>
             <!-- <img src="./imgs/mui-logo.png" alt="logo" class="logo" style="width: 100px;"> -->
+            <aside class="notes">
+              It is quite straightforward to use. You just have to install npm packages as your dependencies and then you’re ready to go.
+            </aside>
           </section>
           <section>
             <h4>and....use</h4>
@@ -87,8 +98,15 @@
 								);
 							}
 						</script></code></pre>
+            <aside class="notes">
+              So, here I’m going to show you the use of simple components that are often used, which are Button, List, Input field, You import them as components from Material UI library and use it as any other React component in your file. On the right hand side you can see that those components already have some predefined styles, because MUI already assigned to them some of the properties.
+            </aside>
           </section>
-          <section><img src="./examples/assets/components-list.png" alt="" /></section>
+          <section><img src="./examples/assets/components-list.png" alt="" />
+            <aside class="notes">
+              And library actually provides quite a good list of components that could start from a simple button component and go on to more complex components like set of buttons, that already are given as pagination component, navbar component. What is more, it actually have also icon component. 
+            </aside>
+            </section>
           <section>
             <h4>icons</h4>
             <pre><code data-trim data-noescape><script type="text/template">
@@ -112,6 +130,9 @@
 
 							export default App;
 						</script></code></pre>
+            <aside class="notes">
+              So basically for icons MUI have an extra library. So you use it to extra an icon you need, import it in your file and use it again as any other React component. You can see icons on the right hand side as well. 
+            </aside>
           </section>
           <section>
             <h4>typography</h4>
@@ -135,6 +156,10 @@
 							
 							export default App;
 						</script></code></pre>
+            <aside class="notes">
+              One more interesting component that MUI has is called Typography. It basically, a standardized style for the text in the library. You have to wrap up the text inside of the typography component. And set up an element that you want this component to look like. Here I’m showing h3 component with the use of Typography stylization and just h3 element by itself. And you can see the difference on the right hand side. 
+But however, you may be want at some point to change a little bit of those standardized styles in your project. Or may be just change the whole style that is already predefined and that could be done by several options that I’m going to describe and explain further on in this presentation. Because, generally MUI is already having some predefined classes for the components. So it is not advisable to change the class names as you usually do in CSS or React components. So there are other ways
+            </aside>
           </section>
         </section>
         <section>
@@ -161,6 +186,9 @@
 							
 							export default App;
 						</script></code></pre>
+            <aside class="notes">
+              First of them is using the standardized properties that are already assigned to each component in the library. Like each component, could it be a button or input, already have such properties as variant/color/size for example. And each of these properties have set of values that could be changed as well. For example in the color you can change secondary to primary or error color. You can choose it from there. But if by any chance you won’t find properties that you want from this list, you can also use sx property, which receives an object with properties that you want to change and basically assigns them to the component you want. But as you see these are sort of instyle change of styles. That’s why if you’re going to use these kind of options, you might need to use it every instance of the component that you want to choose. Let’s say, if you have several buttons, then you will need to change each button like that. On the right hand side you can see how button changed and how margin have already added up to it. 
+            </aside>
           </section>
           <section>
             <h4>customization</h4>
@@ -176,6 +204,9 @@
             <pre><code data-trim data-noescape><script type="text/template">		
 							<Button sx={btn}>BlackBtn</Button>
 						</script></code></pre>
+            <aside class="notes">
+              So to overcome this issue you can use the same sx property but with a constant instead. And the constant could be assigned to object of properties. Basically I look at it as if this option is actually replicating classname assignment to the component as if you do it in css when you give a class to the element. You basically can use this constant and sx property and assign those to all different buttons that you want to change.
+            </aside>
           </section>
           <section>
             <h4>customization</h4>
@@ -216,6 +247,9 @@
 							
 							export default App;
 						</script></code></pre>
+            <aside class="notes">
+              If at some point you actually would want to change the whole file or a part of it. You can also use a thing called theme and ThemeProvider. ThemeProvider is basically a Component that you use to wrap up the part of the code that you want to be affected. And you assign a theme property to it with an argument that you create form CreateTheme method. To it you assign a different kind of values and properties that you want to change. Here accordingly I changed the primary color and a standardized h3 typography and created my own typography style as well. As you see I have already created a fontFamily and the link to these you have to include yourself in HTML file. On the right hand side this is the theme I have changed for the whole file and I wrapped up into typography h3 element here and h3 over here. That’s why they have changed and the rest have been left as it was.
+            </aside>
           </section>
           <section>
             <h4>customization</h4>
@@ -236,6 +270,9 @@
 
 							export default NewButton;
 						</script></code></pre>
+            <aside class="notes">
+              If by any chance, you want to not change the whole theme or just take a components or set of components. You can use another way to stylize it. And this is creation of a new component. This is achieved with the help of styled utility that’s you have to install as well form the library. And with its help you take the standardized component and change the properties you want in it, creating  a new component by yourself which you export and then use as a normal component in your react file. on the right hand side you can see the button that was created using this new component. 
+            </aside>
           </section>
         </section>
         <section>
@@ -246,6 +283,10 @@
             <li>Wide range of features/animations</li>
             <li>Full documentation</li>
           </ul>
+          <aside class="notes">
+            This is it. I think I’ve explained some of the ways you can customize the library your own way and I hope this presentation is useful for your future projects cause I think I have explained the advantages that this library have. Like vast range of components with different animations and features, and quite a detailed documentation that you might find very handy if you’re actually up to using this library in the future.
+Thank you for your time and good bye!
+          </aside>
         </section>
       </div>
     </div>
